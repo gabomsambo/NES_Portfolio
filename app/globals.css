@@ -1,0 +1,363 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to Bright & Happy Pixel Palette - Light Mode */
+  --background: #fffbf0;
+  --foreground: #1a1a2e;
+  --card: #fffbf0;
+  --card-foreground: #1a1a2e;
+  --popover: #fffbf0;
+  --popover-foreground: #1a1a2e;
+  --primary: #ff006e;
+  --primary-foreground: #fffbf0;
+  --secondary: #00d9ff;
+  --secondary-foreground: #1a1a2e;
+  --muted: #5a189a;
+  --muted-foreground: #fffbf0;
+  --accent: #ffe500;
+  --accent-foreground: #1a1a2e;
+  --destructive: #ff6b35;
+  --destructive-foreground: #fffbf0;
+  --border: #1a1a2e;
+  --input: #fffbf0;
+  --ring: #00d9ff;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0px;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Custom Bright Pixel Colors */
+  --pixel-pink: #ff006e;
+  --pixel-cyan: #00d9ff;
+  --pixel-yellow: #ffe500;
+  --pixel-green: #39ff14;
+  --pixel-purple: #5a189a;
+  --pixel-orange: #ff6b35;
+  --pixel-white: #fffbf0;
+  --pixel-charcoal: #1a1a2e;
+}
+
+.dark {
+  /* Updated to Bright & Happy Pixel Palette - Dark Mode */
+  --background: #0d1b2a;
+  --foreground: #f0fff0;
+  --card: #1a2b3c;
+  --card-foreground: #f0fff0;
+  --popover: #0d1b2a;
+  --popover-foreground: #f0fff0;
+  --primary: #ff006e;
+  --primary-foreground: #fffbf0;
+  --secondary: #00d9ff;
+  --secondary-foreground: #0d1b2a;
+  --muted: #1a2b3c;
+  --muted-foreground: #f0fff0;
+  --accent: #ffe500;
+  --accent-foreground: #0d1b2a;
+  --destructive: #ff6b35;
+  --destructive-foreground: #f0fff0;
+  --border: #ff006e;
+  --input: #1a2b3c;
+  --ring: #00d9ff;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-pixel-body), "VT323", monospace;
+  --font-mono: var(--font-pixel-title), "Press Start 2P", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* NES Pixel Art Custom Styling */
+
+/* Scanlines effect for retro CRT look */
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 4px;
+  }
+}
+
+.scanlines {
+  position: relative;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scanlines 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Pixelated image rendering */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Discrete step animations for pixel feel */
+.pixel-animate {
+  transition: all 0.1s steps(2);
+}
+
+/* Text shadow for classic pixel look */
+.pixel-shadow {
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.pixel-shadow-sm {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* NES Button 3D Effect */
+.nes-button {
+  border: 4px solid #000;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s steps(2);
+}
+
+.nes-button:hover {
+  box-shadow: inset -2px -2px 0px rgba(0, 0, 0, 0.3);
+  transform: translate(2px, 2px);
+}
+
+.nes-button:active {
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.3);
+  transform: translate(4px, 4px);
+}
+
+/* Updated NES Card with bright pixel colors */
+.nes-card {
+  border: 6px solid #1a1a2e;
+  box-shadow: inset -4px -4px 0px #ff006e, inset 4px 4px 0px #00d9ff;
+}
+
+.dark .nes-card {
+  box-shadow: inset -4px -4px 0px #00d9ff, inset 4px 4px 0px #ff006e;
+}
+
+/* Updated Arcade cabinet frame with bright colors */
+.arcade-frame {
+  border: 8px solid #1a1a2e;
+  box-shadow: inset -4px -4px 0px #ff006e, inset 4px 4px 0px #00d9ff;
+}
+
+.dark .arcade-frame {
+  box-shadow: inset -4px -4px 0px #00d9ff, inset 4px 4px 0px #ff006e;
+}
+
+/* Photo Frame Animations for Hero Section */
+
+/* Animated gradient background for photo frame */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #5a189a 0%, #00d9ff 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Glow pulse animation for photo frame */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 0, 110, 0.3), inset -4px -4px 0px rgba(0, 0, 0, 0.3), inset 4px 4px 0px
+      rgba(255, 213, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.6), inset -4px -4px 0px rgba(0, 0, 0, 0.3), inset 4px 4px 0px
+      rgba(255, 213, 255, 0.5);
+  }
+}
+
+.photo-frame {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Rotating star animation */
+@keyframes rotateStar {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.rotating-star {
+  color: #ffe500;
+  animation: rotateStar 4s linear infinite;
+  transform-origin: center;
+}
+
+/* Pixelated image rendering for photo */
+.pixelated-image {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Hover effects for photo frame */
+.photo-frame-hover {
+  transform: perspective(1000px) rotateZ(3deg);
+  transition: transform 0.2s ease-out;
+}
+
+.photo-frame-hover .gradient-bg {
+  animation: gradientShift 3s ease infinite;
+}
+
+.photo-frame-hover {
+  animation: glowPulseHover 2s ease-in-out infinite;
+}
+
+@keyframes glowPulseHover {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 110, 0.5), inset -4px -4px 0px rgba(0, 0, 0, 0.3), inset 4px 4px 0px
+      rgba(255, 213, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 110, 0.8), inset -4px -4px 0px rgba(0, 0, 0, 0.3), inset 4px 4px 0px
+      rgba(255, 213, 255, 0.5);
+  }
+}
+
+/* Border color flash animation on hover */
+@keyframes borderFlash {
+  0% {
+    border-color: #ff006e;
+  }
+  25% {
+    border-color: #00d9ff;
+  }
+  50% {
+    border-color: #ffe500;
+  }
+  75% {
+    border-color: #00d9ff;
+  }
+  100% {
+    border-color: #ff006e;
+  }
+}
+
+.photo-frame-hover {
+  animation: borderFlash 2s linear infinite, glowPulseHover 2s ease-in-out infinite;
+}
+
+/* Speed up star rotation on hover */
+.photo-frame-hover ~ .rotating-star,
+.photo-frame:hover ~ .rotating-star {
+  animation: rotateStar 2s linear infinite;
+}
+
+/* Brutalist Skills Section - Animated Ticker */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 16s linear infinite;
+}
