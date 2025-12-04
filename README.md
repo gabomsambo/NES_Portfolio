@@ -9,11 +9,11 @@
 
 ## ✨ What's This?
 
-This is my personal portfolio — not your average developer website. I wanted something that felt like *me*: a bit retro, a bit bold, and definitely not boring.
+This is my personal portfolio to show a bit of myself. I wanted something that felt like *me*: a bit retro, a bit bold, and definitely not boring.
 
 The design is inspired by pixel art and arcade aesthetics. Think NES meets modern web development. Scanlines, glow effects, and that satisfying chunky pixel shadow on everything.
 
-**[🚀 Live Demo](#)** *(add your deployed URL here)*
+**[🚀 Live Demo](#)** *gabrielsambo.com*
 
 ## 🛠️ Built With
 
@@ -34,21 +34,6 @@ The design is inspired by pixel art and arcade aesthetics. Think NES meets moder
 - **Responsive Design** — Looks good on everything from phones to ultrawide monitors
 - **One-Click Contact** — Email link opens your default mail app, ready to send
 
-## 🚀 Run It Locally
-
-```bash
-# Clone the repo
-git clone https://github.com/gabomsambo/portfolio.git
-cd portfolio
-
-# Install dependencies
-npm install --legacy-peer-deps
-
-# Start the dev server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) and you're in.
 
 ## 📁 Project Structure
 
