@@ -13,7 +13,7 @@ interface HeroProps {
 
 export function Hero({
   onViewWorkClick,
-  photoSrc = "/professional-headshot-pixel-art.jpg",
+  photoSrc = "/portrait.png",
   photoAlt = "Gabriel",
   heroHeading = "Hi, I'm Gabriel - a software engineer building useful software one problem at a time.",
   heroSubheading = "Based in Spain — working on web apps, automation, and smarter workflows.",
@@ -51,7 +51,12 @@ export function Hero({
   }
 
   const handleDownloadResume = () => {
-    console.log("Download resume clicked")
+    const link = document.createElement("a")
+    link.href = "/Gabriel_Sambo_Resume_SWE.pdf"
+    link.download = "Gabriel_Sambo_Resume_SWE.pdf"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   return (

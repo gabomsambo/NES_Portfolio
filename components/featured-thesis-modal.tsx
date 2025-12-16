@@ -125,7 +125,7 @@ export function FeaturedThesisModal({
                               {subtitle}
                             </span>
                           </div>
-                          <h2 className="font-sans text-3xl md:text-5xl font-bold text-[#1A1A2E] pixel-shadow leading-tight mb-6">
+                          <h2 className="font-sans text-3xl md:text-5xl font-bold text-[#1A1A2E] leading-tight mb-6">
                             {title}
                           </h2>
                           <p className="font-sans text-lg leading-relaxed text-[#1A1A2E]/80">{description}</p>

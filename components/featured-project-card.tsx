@@ -79,12 +79,12 @@ export function FeaturedProjectCard({ title, subtitle, description, imageUrl, on
             <div>
               <motion.h3
                 animate={{ x: isHovered ? 4 : 0 }}
-                className="font-sans text-2xl lg:text-3xl font-bold text-[#1A1A2E] leading-tight pixel-shadow-sm mb-3"
+                className="font-sans text-2xl lg:text-3xl font-bold text-[#1A1A2E] dark:text-white leading-tight pixel-shadow-sm mb-3"
               >
                 {title}
               </motion.h3>
               <p className="font-mono text-base text-[#FF6B35] mb-4 uppercase tracking-wide">{subtitle}</p>
-              <p className="font-sans text-sm lg:text-base leading-relaxed text-[#1A1A2E] mb-6">{description}</p>
+              <p className="font-sans text-sm lg:text-base leading-relaxed text-[#1A1A2E] dark:text-white mb-6">{description}</p>
             </div>
 
             {/* CTA with animated arrow */}
